@@ -34,3 +34,12 @@ models:
       - name: "is_spam"
         description: "True if this user has been marked as a fraudulent account."
         data_type: "bool"
+  - name: model_with_no_down_stream_dependencies
+    description: "Daily metrics for orders placed on this platform."
+    columns:
+      - name: num_orders
+        description: "A test that will fail as num_orders is not a unique column"
+        data_type: "int"
+        tests:
+          - unique
+
