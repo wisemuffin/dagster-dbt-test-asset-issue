@@ -34,7 +34,7 @@ models:
       - name: "is_spam"
         description: "True if this user has been marked as a fraudulent account."
         data_type: "bool"
-  - name: model_with_no_down_stream_dependencies
+  - name: model_with_failing_test
     description: "Daily metrics for orders placed on this platform."
     columns:
       - name: num_orders

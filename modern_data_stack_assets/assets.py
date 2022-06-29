@@ -46,6 +46,16 @@ def predicted_orders(
     return pd.DataFrame({"order_date": future_dates, "num_orders": predicted_data})
 
 
+@asset(compute_kind="python")
+def predicted_fake(model_with_failing_test: pd.DataFrame) -> Any:
+    """Model parameters that best fit the observed data"""
+    df = model_with_failing_test
+    return tuple(
+        optimize.curve_fit(
+            f=model_func, xdata=df.order_date.astype(np.int64), ydata=df.num_orders, p0=[10, 100]
+        )[0]
+    )
+
 # all of the resources needed for interacting with our tools
 resource_defs = {
     "airbyte": airbyte_resource.configured(AIRBYTE_CONFIG),
