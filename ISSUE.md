@@ -22,4 +22,4 @@ But as soon as i add a new model with no downstream dependencies and create a fa
 
 How do i get those upstream dependencies to continue if none of there dependencies have failed?
 
-Example of the changes i made to [blog](https://dagster.io/blog/software-defined-assets) : 
+Example of the changes i made to [blog](https://dagster.io/blog/software-defined-assets) : https://github.com/wisemuffin/dagster-dbt-test-asset-issue/pull/1/files
