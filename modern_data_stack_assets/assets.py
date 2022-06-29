@@ -19,7 +19,7 @@ airbyte_assets = build_airbyte_assets(
 )
 
 dbt_assets = load_assets_from_dbt_project(
-    project_dir=DBT_PROJECT_DIR, io_manager_key="pandas_io_manager"
+    project_dir=DBT_PROJECT_DIR, io_manager_key="pandas_io_manager", use_build_command=True
 )
 
 
